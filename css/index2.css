@@ -1,0 +1,211 @@
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  font-size: 12px;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  line-height: 1.17333rem;
+  padding: 0 0.37333rem;
+  justify-content: space-between;
+}
+
+header h3 {
+  flex: 1;
+  font-size: 0.53333rem;
+  text-align: center;
+}
+
+header span {
+  flex-basis: 0.85333rem;
+  font-size: 0.42667rem;
+}
+
+footer {
+  display: flex;
+  height: 1.46667rem;
+  border-top: 1px solid #ccc;
+}
+
+footer .left-container {
+  flex: 1;
+  padding-left: 0.37333rem;
+  padding-right: 0.37333rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer .left-container b {
+  font-size: 0.34667rem;
+}
+
+footer .left-container .amount-price {
+  color: #F04146;
+}
+
+footer .left-container .all-check {
+  display: flex;
+  align-items: center;
+}
+
+footer .left-container .all-check .check-btn {
+  margin-right: 0.13333rem;
+}
+
+footer .pay-btn {
+  width: 3.33333rem;
+  line-height: 1.46667rem;
+  background-color: #F04146;
+  font-size: 0.37333rem;
+  font-size: 13px;
+  text-align: center;
+  color: #FFF;
+}
+
+[data-dpr="2"] footer .pay-btn {
+  font-size: 26px;
+}
+
+[data-dpr="3"] footer .pay-btn {
+  font-size: 39px;
+}
+
+section {
+  flex: 1;
+  background-color: #EEE;
+  overflow: auto;
+}
+
+.check-btn {
+  width: 0.53333rem;
+  height: 0.53333rem;
+  line-height: 0.53333rem;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background-color: #FFF;
+  text-align: center;
+}
+
+.check-btn span {
+  font-size: 0.53333rem;
+  color: #FFF;
+}
+
+.check {
+  background-color: #F04146;
+}
+
+.item-container {
+  margin: 0.2rem 0;
+  padding: 0.26667rem 0;
+  background-color: #FFF;
+}
+
+.item-container .item-title {
+  display: flex;
+  padding-left: 0.33333rem;
+  padding-right: 0.33333rem;
+  justify-content: space-between;
+  font-size: 0.34667rem;
+}
+
+.item-container .item-title p {
+  flex: 1;
+}
+
+.item-container .item-title b {
+  width: 0.85333rem;
+  height: 0.48rem;
+  line-height: 0.48rem;
+  margin-right: 0.2rem;
+  border-radius: 0.06667rem;
+  background-color: #F04146;
+  text-align: center;
+  color: #FFF;
+}
+
+.item-container .item-title span {
+  margin-left: 0.2rem;
+  color: #F04146;
+}
+
+.item-container .item-config {
+  display: flex;
+  align-items: center;
+  padding-left: 0.33333rem;
+  padding-right: 0.33333rem;
+}
+
+.item-container .item-config .item-pic {
+  width: 2.8rem;
+}
+
+.item-container .item-config .item-pic img {
+  display: block;
+  width: 100%;
+}
+
+.item-container .item-config .config-info {
+  flex: 1;
+}
+
+.item-container .item-config .config-info h3 {
+  font-size: 0.32rem;
+  font-weight: normal;
+}
+
+.item-container .item-config .config-info ul {
+  margin-top: 0.13333rem;
+  height: 1.2rem;
+  color: #666;
+}
+
+.item-container .item-config .price-num {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-container .item-config .price-num > span {
+  color: #F04146;
+}
+
+.item-container .item-config .price-num div {
+  width: 2.09333rem;
+  height: 0.42667rem;
+  border: 1px solid #ccc;
+}
+
+.item-container .item-config .price-num div span,
+.item-container .item-config .price-num div input {
+  float: left;
+  line-height: 0.42667rem;
+  text-align: center;
+}
+
+.item-container .item-config .price-num div input {
+  width: 1.22667rem;
+  font-size: 0.37333rem;
+}
+
+.item-container .item-config .price-num div span {
+  width: 0.4rem;
+}
+
+.item-container .item-config .price-num div .count-down {
+  border-right: 1px solid #ccc;
+}
+
+.item-container .item-config .price-num div .add {
+  border-left: 1px solid #ccc;
+}

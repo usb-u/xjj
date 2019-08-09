@@ -1,0 +1,188 @@
+@function en($px,$rem : 75) {
+    @return $px / $rem * 1rem;
+}
+
+html,
+body,
+#app {
+    height: 100%;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: en(82);
+    background-color: #000;
+}
+
+footer {
+    display: flex;
+    height: en(155);
+    a {
+        flex: 1;
+        // 将超出的宽度平均分给每个子元素
+        text-align: center;
+        img {
+            display: block;
+            width: en(43);
+            // height: en(40);
+            margin:  0 auto;
+        }
+        span {
+            font-size: en(24);
+        }
+    }
+}
+
+section {
+    flex: 1;
+    display: flex;    
+    overflow: auto;
+        // height: 1000px;
+        .content-left {
+            width: en(148);
+            height: 100%;
+            background-color: #F8F8F8;     
+            border-right: 6px solid #BCBCBC;  
+            padding-right: en(18);                         
+            >div {
+                // min-height: 100.1%;
+                ul {
+                    // width: en(148);                    
+                    li {
+                        font-size: en(24);
+                        margin-top: en(52);
+                        margin-left: en(23);
+                        height: en(80);
+                    }
+                    >.current {
+                        // color: #FF4891;
+                        position: relative;
+                        background-color: #FFF;
+                        color: #474245;
+                        border-left: 8px solid #FF4891;
+                        padding-left: en(15);
+                    }
+                }
+                h2 {
+                    font-size: en(26);
+                    font-weight: 700;
+                    height: en(75);
+                    background-color: #fff;
+                    text-align: center;
+                    line-height: en(75);
+                    border-left: 8px solid #FF4891;
+                }           
+             }
+        }
+    .content {
+        height: 100%;
+        .content-right {
+            position: relative;
+            // width: 100%;
+            height: en(110);                    
+            width: en(597);
+            overflow: hidden;
+    // 块级元素继承父元素宽度；转为弹性盒继承1父元素高度
+            div {
+                position: absolute;
+                ul {
+                    display: flex;
+                    // justify-content: space-around;
+                    li {
+                        font-size: en(23);
+                        // word-break: keep-all;
+                        white-space: nowrap;
+                        // 强制在一行显示
+                        height: en(71);
+                        line-height: en(71);
+                        margin-left: en(27);
+                    }
+                    >.current {
+                       color: #FF4891; 
+                    }
+                }
+            }
+           
+        }
+        .gddah {
+            height: 100%;
+           overflow: auto;
+            .vagetabal {
+                font-size: en(24);
+                margin-top: en(17);
+                margin-left: en(37);
+                padding-bottom: en(17);
+            }
+
+                    .tuwen {
+                        border-top: 2px solid #ccc;
+                        padding-top: en(27);
+                        margin-top: en(20);
+                        >dl {
+                            display: flex;
+                            justify-content: space-around;
+                            >dt {
+                                img {
+                                    display: block;
+                                    width: en(180);
+                                    height: en(173);
+                                }
+                            }
+                            dd {
+                                h2 {
+                                    font-size: en(28);
+                                }
+                                p {
+                                    font-size: en(24);
+                                    color: #969696;  
+                                    margin-top: en(21);                        
+                                }
+                                .en {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    .price {
+                                        .one {
+                                        font-size: en(18);
+                                        color: #FF6BA6;   
+                                    margin-top: en(25);
+                                                                     
+                                        }
+                                        .twe {
+                                            font-size: en(20);
+                                            color: #969696; 
+                                        margin-top: en(15);                                                             
+                                        }
+                                    }
+                                    >dt {
+                                        display: flex;
+                                        align-items: flex-end;                            
+                                        img {
+                                            display: block;
+                                            width: en(60);
+                                            height: en(60);
+                                        }
+                                    }
+                                    .dakuang {
+                                        display: flex;
+                                        align-items: center;
+                                        display: none;
+                                        .num {
+                                            display: block;
+                                            width: en(80);
+                                            height: en(35);
+                                            border: 1px solid #ccc;
+                                            text-align: center;
+                                            color: red;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+        }
+    }
+}

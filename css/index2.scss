@@ -1,0 +1,250 @@
+$com-color: #F04146;
+
+// 1. 高度继承
+
+html,
+body,
+#app {
+    height: 100%;
+}
+
+body {
+    font-size: 12px;
+}
+
+// 2. px to rem
+@function px2rem($px, $rem: 75) {
+    @return $px / $rem * 1rem;
+}
+
+
+// 高清屏(retina)文字适配
+// 
+// 二倍图：750px 量的 34px   => 单倍图： 17px    => 三倍图:51px
+@mixin font-dpr($font-size) {
+    font-size: $font-size;
+
+    [data-dpr="2"] & {
+        font-size: $font-size * 2;
+    }
+
+    [data-dpr="3"] & {
+        font-size: $font-size * 3;
+    }
+}
+
+
+// 多行省略： 显示几行，必须通过height搭配
+@mixin multi-line($height: 1.5em, $line: 2) {
+    height: $height;
+    -webkit-line-clamp: $line;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// 单行文本省略:  必须有一个宽度
+@mixin single-line($width: 100%) {
+    width: $width;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    line-height: px2rem(88);
+    padding: 0 px2rem(28);
+    justify-content: space-between;
+
+    h3 {
+        flex: 1;
+        font-size: px2rem(40);
+        text-align: center;
+    }
+
+    span {
+        flex-basis: px2rem(64);
+        font-size: px2rem(32);
+    }
+}
+
+footer {
+
+    display: flex;
+    height: px2rem(110);
+    border-top: 1px solid #ccc;
+
+    .left-container {
+        flex: 1;
+        padding-left: px2rem(28);
+        padding-right: px2rem(28);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        b {
+            font-size: px2rem(26);
+        }
+
+        .amount-price {
+            color: $com-color;
+        }
+
+        .all-check {
+            display: flex;
+            align-items: center;
+
+            .check-btn {
+                margin-right: px2rem(10)
+            }
+        }
+    }
+
+    .pay-btn {
+        width: px2rem(250);
+        line-height: px2rem(110);
+        background-color: $com-color;
+        font-size: px2rem(28);
+        @include font-dpr(13px);
+        text-align: center;
+        color: #FFF;
+    }
+
+}
+
+section {
+    flex: 1;
+    background-color: #EEE;
+    overflow: auto;
+}
+
+
+.check-btn {
+    width: px2rem(40);
+    height: px2rem(40);
+    line-height: px2rem(40);
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-color: #FFF;
+    text-align: center;
+
+    span {
+        font-size: px2rem(40);
+        color: #FFF;
+    }
+
+    
+}
+.check {
+    background-color: #F04146;
+}
+
+.item-container {
+    margin: px2rem(15) 0;
+    padding: px2rem(20) 0;
+    background-color: #FFF;
+    .item-title {
+        display: flex;
+        padding-left: px2rem(25);
+        padding-right: px2rem(25);
+        justify-content: space-between;
+        font-size: px2rem(26);
+
+        p {
+            flex: 1;
+        }
+
+        b {
+            width: px2rem(64);
+            height: px2rem(36);
+            line-height: px2rem(36);
+            margin-right: px2rem(15);
+            border-radius: px2rem(5);
+            background-color: $com-color;
+            text-align: center;
+            color: #FFF;
+        }
+
+        span {
+
+            margin-left: px2rem(15);
+            color: $com-color;
+        }
+    }
+
+    .item-config {
+        display: flex;
+        align-items: center;
+        padding-left: px2rem(25);
+        padding-right: px2rem(25);
+
+        .item-pic {
+            width: px2rem(210);
+
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .config-info {
+            flex: 1;
+
+            h3 {
+                font-size: px2rem(24);
+                font-weight: normal;
+            }
+            ul {
+                margin-top: px2rem(10);
+                height: px2rem(90);
+                color: #666;
+            }
+        }
+
+        .price-num {
+            display: flex;
+            justify-content: space-between;
+            >span {
+                color: $com-color;
+            }
+            div {
+                width: px2rem(157);
+                height: px2rem(32);
+
+                border: 1px solid #ccc;
+
+                span,
+                input {
+                    float: left;
+                    line-height: px2rem(32);
+                    text-align: center;
+                }
+
+                input {
+                    width: px2rem(92);
+                    font-size: px2rem(28);
+                }
+
+                span {
+                    width: px2rem(30);
+                }
+
+                .count-down {
+                    border-right: 1px solid #ccc;
+                }
+
+                .add {
+                    border-left: 1px solid #ccc;
+                }
+
+            }
+        }
+    }
+}
